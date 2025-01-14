@@ -1,78 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de apresentação - João</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="reset.css">
-
+    <title>Portfólio - João Pedro Paes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div id="sidebar">
-            <div class="sidebar-container">
-                <img class="logo-portfolio" src="logo_dev.webp" alt="Logo portfolio">
-                <h1>Portfólio João</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#sessao-sobre">Sobre</a></li>
-                        <li><a href="#sessao-projetos">Projetos</a></li>
-                        <li><a href="#sessao-linguagens">Linguagens</a></li>
-                        <li><a href="#sessao-contato">Contato</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="content">
-            <main>
-                <section id="sessao-sobre">
-                    <div class="banner"></div>
-                    <div class="sessao-sobre-content">
-                        <h1> Olá, sou o João</h1>
-                        <div class="sobre-texto">
-                            <div class="sessao-minibanner"></div>
-                            <div class="sessao-descricao"></div>
-                            <p>
-                                Estudante de Análise e Desenvolvimento de Sistemas, 
-                                apaixonado por tecnologia e programação. </p>
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#apresentacao">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#habilidades">Linguagens</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
 
-                    </div>
-                    </section>
-                    <section id="sessao-projetos">
-                        <div class="sessao-content">
-                            <h1>Projetos</h1>
-                            <div class="sessao-minibanner"> 
-                                <div class="sessao-descricao">
-                                    <p>Conheça alguns dos meus projetos</p>
-                                </div>   
-                            </div>
-                        </div>
-                    </section>
-                    <section id="sessao-linguagens">
-                        <div class="sessao-content">
-                            <h1>Linguagens</h1>
-                            <div class="sessao-minibanner"> 
-                                <div class="sessao-descricao">
-                                    <p>Conheça algumas das linguagens que eu programo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section id="sessao-contato">
-                            <h2>Contato</h2>
-                                <form id="form-contato">
-                                    <input type="text" name="nome" placeholder="Nome">
-                                    <input type="email" name="email" placeholder="E-mail">
-                                    <textarea name="mensagem" placeholder="Escreva sua mensagem"></textarea>
-                                    <button type="submit">Enviar</button>
-                            </form>
-                    </section>
-                    <footer>
-                        <p>Desenvolvido por João</p>
-                    </footer>
-                </main>
+    <!-- Conteúdo principal -->
+    <div id="main-content">
+        <!-- Seção de Apresentação -->
+        <header id="apresentacao">
+            <div class="container">
+                <img src="foto-perfil.jpg" alt="Foto de João Pedro Paes" class="foto-perfil">
+                <h1>João Pedro Paes</h1>
+                <p>Desenvolvedor Full Stack | Estudante de Tecnologia</p>
             </div>
-        </div>
+        </header>
+
+        <!-- Seção de Habilidades -->
+        <section id="habilidades">
+            <div class="container">
+                <h2>Minhas Linguagens</h2>
+                <div class="habilidades-lista">
+                    <div class="habilidade">
+                        <img src="icons8-java.svg" alt="Java">
+                        <p>Java</p>
+                    </div>
+                    <div class="habilidade">
+                        <img src="icons8-html5.svg" alt="HTML5">
+                        <p>HTML5</p>
+                    </div>
+                    <div class="habilidade">
+                        <img src="icons8-css3.svg" alt="CSS3">
+                        <p>CSS3</p>
+                    </div>
+                    <div class="habilidade">
+                        <img src="icons8-angular.svg" alt="Angular">
+                        <p>Angular</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Projetos -->
+        <section id="projetos">
+            <div class="container">
+                <h2>Meus Projetos</h2>
+				<br></br>
+                <div class="projetos-lista">
+                    <div class="projeto">
+                        <h3>Projeto 1</h3>
+						<figure>
+							<p>Criação de sistema de manutenção feito com Angular e Spring.</p>
+							<a href="https://github.com/WorkWEB2/projeto-web-orcamento">Ver Repositório</a>
+							<figcaption>Este projeto envolve a criação de um sistema de manutenção com orçamentação usando as tecnologias Angular para o frontend e Spring para o backend.</figcaption>
+						</figure>
+							</div>
+                    <div class="projeto">
+                        <h3>Projeto 2</h3>
+                        <figure>
+							<p>Criação de sistema bancário usando Java como backend e frontend.</p>
+							<a href="https://github.com/Grupo-de-LPOO1-Java/Trabalho_Final_Java_LPOO1">Ver Repositório</a>
+							<figcaption>Este projeto envolve a criação de um sistema bancário usando Swing para o frontend e Java para o backend.</figcaption>
+						</figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <form id="form-contato">
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="redes-sociais">
+					<a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-paes1234/" target="_blank">
+						<img src="icons8-linkedin.svg" alt="LinkedIn" class="icone-rede-social">
+					</a>
+					<a href="https://github.com/JoaoPedroPaess" target="_blank">
+						<img src="icons8-github.svg" alt="GitHub" class="icone-rede-social">
+					</a>
+					<a href="https://api.whatsapp.com/send?phone=41984441284" target="_blank">
+						<img src="icons8-whatsapp.svg" alt="LinkedIn" class="icone-rede-social">
+					</a>
+				</div>
+				
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 João Pedro Paes - Todos os direitos reservados</p>
+            </div>
+        </footer>
+    </div>
+
 </body>
 </html>
