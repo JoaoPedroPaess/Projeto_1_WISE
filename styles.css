@@ -10,57 +10,56 @@ body {
     background-color: #f4f4f4;
     color: #333;
     display: flex;
-    height: 100vh;
-    overflow-x: hidden;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px; /* Espaço para a navbar */
 }
 
-/* Sidebar */
-#sidebar {
+/* Navbar fixa no topo */
+#navbar {
     background-color: #4b3b4e;
     color: white;
-    width: 250px;
+    width: 100%;
     position: fixed;
-    height: 100%;
     top: 0;
     left: 0;
-    padding-top: 30px;
-    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 10px 0;
 }
 
-#sidebar ul {
+#navbar ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-#sidebar ul li {
-    padding: 15px;
-    text-align: center;
+#navbar ul li {
+    padding: 10px 20px;
 }
 
-#sidebar ul li a {
+#navbar ul li a {
     color: white;
     text-decoration: none;
-    display: block;
     font-size: 1.2em;
-    padding: 10px;
-    border-bottom: 1px solid #fff;
-    transition: background-color 0.3s, padding-left 0.3s;
+    transition: background-color 0.3s;
 }
 
-#sidebar ul li a:hover {
+#navbar ul li a:hover {
     background-color: #f2f3f5;
     color: #0e60b1;
-    padding-left: 15px;
 }
 
 /* Conteúdo principal */
 #main-content {
-    margin-left: 250px;
+    margin-top: 80px;
     padding: 20px;
     width: 100%;
     overflow-y: auto;
+    flex-grow: 1;
 }
 
+/* Header */
 header {
     background-color: #4b3b4e;
     padding: 50px 0;
@@ -78,7 +77,7 @@ header p {
     font-size: 1.5em;
 }
 
-/* Logo animado */
+/* Foto do perfil com animação */
 .foto-perfil {
     border-radius: 50%;
     width: 150px;
@@ -106,13 +105,13 @@ header p {
 }
 
 /* Seção Sobre */
-#sobre {
+#sobre-mim {
     padding: 50px 0;
     background: linear-gradient(135deg, #f7d9e3, #fff);
     text-align: center;
 }
 
-#sobre .container {
+#sobre-mim .container {
     max-width: 800px;
     margin: 0 auto;
     background: white;
@@ -121,13 +120,13 @@ header p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#sobre h2 {
+#sobre-mim h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #c76470;
 }
 
-#sobre p {
+#sobre-mim p {
     font-size: 1.2em;
     line-height: 1.8;
     color: #555;
@@ -140,169 +139,180 @@ header p {
     text-align: center;
 }
 
-#habilidades .habilidades-lista {
+.habilidades-lista {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .habilidade {
+    width: 120px;
     text-align: center;
-    transition: transform 0.3s;
-}
-
-.habilidade:hover {
-    transform: scale(1.1);
+    margin: 20px;
 }
 
 .habilidade img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
-    transition: transform 0.3s, filter 0.3s;
+    width: 50px;
+    height: 50px;
 }
 
-.habilidade img:hover {
-    transform: rotate(360deg);
-    filter: brightness(1.2);
+.habilidade p {
+    margin-top: 10px;
+    font-size: 1.1em;
 }
 
 /* Seção Projetos */
 #projetos {
     padding: 50px 0;
-    background-color: #e9ecef;
+    background: #eef1f6;
     text-align: center;
 }
 
 .projetos-lista {
     display: flex;
-    justify-content: space-around;
-    gap: 40px;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .projeto {
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.projeto:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .projeto h3 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-bottom: 10px;
+    color: #4b3b4e;
+}
+
+.projeto p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
 }
 
 .projeto a {
+    color: #0e60b1;
+    font-weight: bold;
     text-decoration: none;
-    color: #4603c2;
-    transition: color 0.3s;
 }
 
 .projeto a:hover {
-    color: #2790C6;
+    text-decoration: underline;
 }
 
 /* Seção Contato */
 #contato {
     padding: 50px 0;
-    background-color: #fff;
+    background-color: #f4f7fc;
+    color: #333;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-#contato form input,
-#contato form textarea {
-    width: 100%;
-    padding: 15px;
+#contato h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #4b3b4e;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#form-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#form-contato input,
+#form-contato textarea {
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s;
+    width: 100%;
 }
 
-#contato button {
-    background-color: #c76470;
+#form-contato input:focus,
+#form-contato textarea:focus {
+    border-color: #4b3b4e;
+    outline: none;
+}
+
+#form-contato button {
+    padding: 15px;
+    background-color: #4b3b4e;
     color: white;
-    padding: 15px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1.2em;
     cursor: pointer;
+    width: 100%;
     transition: background-color 0.3s;
 }
 
-#contato button:hover {
-    background-color: #2790C6;
+#form-contato button:hover {
+    background-color: #c76470;
 }
 
-.redes-sociais a {
-    text-decoration: none;
-    margin: 10px;
-    color: #0e60b1;
-    font-size: 1.2em;
-    display: inline-block;
+.rede-sociais {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.rede-sociais a {
+    margin: 0 15px;
+}
+
+.icone-rede-social {
+    width: 50px;
+    height: 50px;
     transition: transform 0.3s;
 }
 
-.redes-sociais a:hover {
-    transform: scale(1.2);
+.icone-rede-social:hover {
+    transform: scale(1.1);
 }
 
-.redes-sociais img {
-    width: 40px;
-    height: 40px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    font-size: 1em;
+.icone-rede-social img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
-    #sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    #main-content {
-        margin-left: 0;
-    }
-
-    #habilidades .habilidades-lista,
-    .projetos-lista {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #sidebar ul li a {
-        font-size: 16px;
-    }
-
     header h1 {
-        font-size: 22px;
+        font-size: 2.5em;
     }
 
-    section h2 {
-        font-size: 20px;
+    #sobre-mim h2 {
+        font-size: 2.2em;
+    }
+
+    .habilidade img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .projeto {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #form-contato input, #form-contato textarea {
+        font-size: 1em;
     }
 }
