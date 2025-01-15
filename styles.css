@@ -1,3 +1,4 @@
+/* Reset e configuração base */
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +6,17 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     display: flex;
     height: 100vh;
+    overflow-x: hidden;
 }
 
+/* Sidebar */
 #sidebar {
-    background-color: #c76470;
+    background-color: #4b3b4e;
     color: white;
     width: 250px;
     position: fixed;
@@ -21,6 +24,7 @@ body {
     top: 0;
     left: 0;
     padding-top: 30px;
+    transition: all 0.3s ease-in-out;
 }
 
 #sidebar ul {
@@ -40,13 +44,16 @@ body {
     font-size: 1.2em;
     padding: 10px;
     border-bottom: 1px solid #fff;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, padding-left 0.3s;
 }
 
 #sidebar ul li a:hover {
-    background-color: #c76470;
+    background-color: #f2f3f5;
+    color: #0e60b1;
+    padding-left: 15px;
 }
 
+/* Conteúdo principal */
 #main-content {
     margin-left: 250px;
     padding: 20px;
@@ -55,28 +62,78 @@ body {
 }
 
 header {
-    background-color: #c76470;
+    background-color: #4b3b4e;
     padding: 50px 0;
     text-align: center;
     color: white;
+    position: relative;
 }
 
 header h1 {
     font-size: 3em;
+    margin-bottom: 10px;
 }
 
 header p {
     font-size: 1.5em;
 }
 
+/* Logo animado */
 .foto-perfil {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     object-fit: cover;
     margin-bottom: 20px;
+    animation: zoomIn 1.5s ease-in-out;
+    transition: transform 0.3s, filter 0.3s;
 }
 
+.foto-perfil:hover {
+    transform: rotate(15deg) scale(1.1);
+    filter: brightness(1.2);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Seção Sobre */
+#sobre {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #f7d9e3, #fff);
+    text-align: center;
+}
+
+#sobre .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#sobre h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #c76470;
+}
+
+#sobre p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Seção Habilidades */
 #habilidades {
     background-color: #fff;
     padding: 50px 0;
@@ -92,13 +149,26 @@ header p {
 
 .habilidade {
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.habilidade:hover {
+    transform: scale(1.1);
 }
 
 .habilidade img {
     width: 60px;
     height: 60px;
+    margin-bottom: 10px;
+    transition: transform 0.3s, filter 0.3s;
 }
 
+.habilidade img:hover {
+    transform: rotate(360deg);
+    filter: brightness(1.2);
+}
+
+/* Seção Projetos */
 #projetos {
     padding: 50px 0;
     background-color: #e9ecef;
@@ -112,6 +182,19 @@ header p {
     flex-wrap: wrap;
 }
 
+.projeto {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
 .projeto h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -120,8 +203,14 @@ header p {
 .projeto a {
     text-decoration: none;
     color: #4603c2;
+    transition: color 0.3s;
 }
 
+.projeto a:hover {
+    color: #2790C6;
+}
+
+/* Seção Contato */
 #contato {
     padding: 50px 0;
     background-color: #fff;
@@ -156,8 +245,20 @@ header p {
     margin: 10px;
     color: #0e60b1;
     font-size: 1.2em;
+    display: inline-block;
+    transition: transform 0.3s;
 }
 
+.redes-sociais a:hover {
+    transform: scale(1.2);
+}
+
+.redes-sociais img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -169,6 +270,7 @@ footer p {
     font-size: 1em;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     body {
         flex-direction: column;
@@ -189,52 +291,18 @@ footer p {
         flex-direction: column;
         gap: 20px;
     }
-	/* Responsividade */
-@media screen and (max-width: 1024px) {
-    #sidebar {
-        width: 200px;
-    }
-    
-    #content {
-        margin-left: 210px;
-        width: calc(100% - 210px);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #container {
-        flex-direction: column;
-    }
-    
-    #sidebar {
-        width: 100%;
-        height: auto;
-        position: static;
-    }
-    
-    #content {
-        margin-left: 0;
-        width: 100%;
-    }
 }
 
 @media screen and (max-width: 480px) {
-    #sidebar nav a {
+    #sidebar ul li a {
         font-size: 16px;
     }
-    
-    #content h1 {
+
+    header h1 {
         font-size: 22px;
     }
-    
-    #content section h2 {
+
+    section h2 {
         font-size: 20px;
     }
-    #sidebar ul li a:hover {
-        background-color: #f2f3f5;  /* Cor do fundo ao passar o mouse */
-        color: #0e60b1;  /* Cor do texto ao passar o mouse */
-        padding-left: 10px;  /* Pequeno deslocamento para a esquerda */
-        transition: all 0.3s ease;  /* Transição suave */     
-}
-}
 }
