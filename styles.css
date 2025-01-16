@@ -16,7 +16,7 @@ body {
 
 
 #navbar {
-    background-color: #4b3b4e;
+    background-color: #4017bc;
     color: white;
     width: 100%;
     position: fixed;
@@ -58,7 +58,7 @@ body {
 }
 
 header {
-    background-color: #4b3b4e;
+    background-color: #4017bc;
     padding: 50px 0;
     text-align: center;
     color: white;
@@ -103,7 +103,7 @@ header p {
 /* Seção Sobre */
 #sobre-mim {
     padding: 50px 0;
-    background: linear-gradient(135deg, #f7d9e3, #fff);
+    background: linear-gradient(135deg, #666ccd, #fff);
     text-align: center;
 }
 
@@ -119,7 +119,7 @@ header p {
 #sobre-mim h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #c76470;
+    color: #53458f;
 }
 
 #sobre-mim p {
@@ -205,7 +205,7 @@ header p {
 #contato {
     padding: 50px 0;
     background-color: #f4f7fc;
-    color: #333;
+    color: #4357ed;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -213,7 +213,7 @@ header p {
 #contato h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
-    color: #4b3b4e;
+    color: #1b0f3d;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
@@ -241,13 +241,13 @@ header p {
 
 #form-contato input:focus,
 #form-contato textarea:focus {
-    border-color: #4b3b4e;
+    border-color: #3141ab;
     outline: none;
 }
 
 #form-contato button {
     padding: 15px;
-    background-color: #4b3b4e;
+    background-color: #2b3097;
     color: white;
     border: none;
     border-radius: 8px;
@@ -258,7 +258,7 @@ header p {
 }
 
 #form-contato button:hover {
-    background-color: #c76470;
+    background-color: #9994ca;
 }
 
 .rede-sociais {
@@ -311,5 +311,31 @@ header p {
     #form-contato input, #form-contato textarea {
         font-size: 1em;
     }
+    }
+    @media (max-width: 510px) {
+        header h1 {
+            font-size: 1.8em;
+        }
+    
+        #sobre-mim h2 {
+            font-size: 1.8em;
+        }
+    
+        .habilidade img {
+            width: 35px;
+            height: 35px;
+        }
+    
+        .projeto {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    
+        #form-contato input, #form-contato textarea {
+            font-size: 0.9em;
+        }
+        #navbar{
+            font-size: 0.6em;
+        }
     
 }
