@@ -1,4 +1,3 @@
-/* Reset e configuração base */
 * {
     margin: 0;
     padding: 0;
@@ -12,10 +11,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 70px; /* Espaço para a navbar */
+    padding-top: 70px; 
 }
 
-/* Navbar fixa no topo */
+
 #navbar {
     background-color: #4b3b4e;
     color: white;
@@ -50,7 +49,6 @@ body {
     color: #0e60b1;
 }
 
-/* Conteúdo principal */
 #main-content {
     margin-top: 80px;
     padding: 20px;
@@ -59,7 +57,6 @@ body {
     flex-grow: 1;
 }
 
-/* Header */
 header {
     background-color: #4b3b4e;
     padding: 50px 0;
@@ -77,7 +74,6 @@ header p {
     font-size: 1.5em;
 }
 
-/* Foto do perfil com animação */
 .foto-perfil {
     border-radius: 50%;
     width: 150px;
@@ -292,7 +288,7 @@ header p {
     object-fit: cover;
 }
 
-/* Responsividade */
+/* Media query */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.5em;
@@ -315,4 +311,5 @@ header p {
     #form-contato input, #form-contato textarea {
         font-size: 1em;
     }
+    
 }
