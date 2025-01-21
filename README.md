@@ -33,7 +33,7 @@ O objetivo é proporcionar uma navegação intuitiva e uma apresentação clara 
 2. Navegue até o diretório:
 3. Abra o index.html em um navegador de sua preferência:
 
-Sinta-se à vontade para explorar o código e dar sugestões de melhorias! 😊
+
 
 
 
