@@ -128,6 +128,34 @@ header p {
     color: #555;
 }
 
+#sobre-mim .btn-curriculo {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #4017bc; /* Azul claro */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+#sobre-mim .btn-curriculo:hover {
+    background-color: #4524aa; 
+    transform: scale(1.05); 
+}
+
+
+#sobre-mim .btn-curriculo:active {
+    background-color: #003f7f; 
+    transform: scale(0.95); 
+}
+
+
 /* Seção Habilidades */
 #habilidades {
     background-color: #fff;
@@ -353,5 +381,5 @@ header p {
         #navbar{
             font-size: 0.6em;
         }
-    
+
 }
